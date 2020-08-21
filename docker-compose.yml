@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    ports:
+      - 9001:9001
+    volumes:
+      - ./microservices/redis:/opt/redis
+  web:
+    image: golang
+    ports: 
+      - 8080:80
+    volumes:
+      - ./src:/usr/share/go/html
